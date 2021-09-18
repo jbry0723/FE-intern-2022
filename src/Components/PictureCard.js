@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ImgContainer from "./ImgContainer";
 import TitleDesc from "./TitleDesc";
 
+
 const PictureCardDiv = styled.div`
   border-radius: 25px;
   border-radius: 25px;
@@ -10,19 +11,22 @@ const PictureCardDiv = styled.div`
   padding: 0rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  width: min-content;
+  width: 1100px;
   box-shadow: 0px 2px #eaeaeb;
   border-left: 3px solid #eaeaeb;
   border-right: 3px solid #eaeaeb;
 `;
 
 const PictureCard = (props) => {
-  const { imgData } = props;
+  const { imgData, updateImages } = props;
+  console.log(imgData)
   return (
+   
     <PictureCardDiv>
       <ImgContainer imgData={imgData} />
       <TitleDesc imgData={imgData} />
     </PictureCardDiv>
+    
   );
 };
 

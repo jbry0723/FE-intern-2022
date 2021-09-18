@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const TitleDescDiv = styled.div`
@@ -23,6 +23,12 @@ const TitleDescDiv = styled.div`
       outline:none;
       color:#a6a6a6;
   }
+  .liked{
+    background-color: #e5e5e5;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+    outline:none;
+    color:#a6a6a6;
+}
   }
   .imgDesc {
     display: block;
@@ -35,7 +41,13 @@ const TitleDescDiv = styled.div`
 `;
 
 const TitleDesc = (props) => {
+  const [isLiked, setIsLiked] = useState(false);
   const { imgData } = props;
+
+  const likeButton = (e) => {
+    e.preventDefault();
+    isLiked ? setIsLiked(false) : setIsLiked(true);
+  };
 
   return (
     <TitleDescDiv>
@@ -43,7 +55,9 @@ const TitleDesc = (props) => {
         {imgData.title} - {imgData.date}
       </h2>
       <p1 className="imgDesc">{imgData.explanation}</p1>
-      <button>Like</button>
+      <button className={isLiked ? "liked" : null} onClick={likeButton}>
+        Like
+      </button>
     </TitleDescDiv>
   );
 };
