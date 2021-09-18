@@ -19,7 +19,6 @@ const PictureCardDiv = styled.div`
 
 const PictureCard = (props) => {
   const { imgData, updateImages } = props;
-  console.log(imgData)
   return (
    
     <PictureCardDiv>

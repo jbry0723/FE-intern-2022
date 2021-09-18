@@ -13,8 +13,12 @@ const ImgContainerDiv = styled.div`
   }
 `;
 
+
+
 const ImgContainer = (props) => {
   const { imgData } = props;
+
+  
 
   return (
     <ImgContainerDiv>
