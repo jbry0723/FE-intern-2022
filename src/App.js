@@ -20,8 +20,7 @@ function App() {
   const [imgData, setImgData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [date, setDate] = useState(format(new Date(), "yyyy-MM-dd"));
-  const [scrollCount, setScrollCount]=useState(1)
-  
+  const [scrollCount, setScrollCount] = useState(1);
 
   useEffect(() => {
     const fetchData = () => {
@@ -43,23 +42,21 @@ function App() {
     fetchData();
   }, [date]);
 
-  
-
   function updateImages() {
     axios
-    .get(
-      `${BASE_URL}start_date=${format(
-        subDays(parseISO(date), (scrollCount*7) +7 + 1),
-        "yyyy-MM-dd"
-        )}&end_date=${format(
-          subDays(parseISO(date), (scrollCount*7)+2),
+      .get(
+        `${BASE_URL}start_date=${format(
+          subDays(parseISO(date), scrollCount * 7 + 7 + 1),
           "yyyy-MM-dd"
-          )}&api_key=${nasaKey}`
-          )
-          .then((res) => {
-            setImgData([...imgData, ...res.data.reverse()]);
-            setScrollCount(scrollCount+1)
-          })
+        )}&end_date=${format(
+          subDays(parseISO(date), scrollCount * 7 + 2),
+          "yyyy-MM-dd"
+        )}&api_key=${nasaKey}`
+      )
+      .then((res) => {
+        setImgData([...imgData, ...res.data.reverse()]);
+        setScrollCount(scrollCount + 1);
+      })
       .catch((err) => {
         console.log("error", err);
       });

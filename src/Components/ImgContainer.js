@@ -4,21 +4,17 @@ import styled from "styled-components";
 const ImgContainerDiv = styled.div`
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
- 
+
   vertical-align: middle;
   img {
-    width:1100px;
+    width: 1100px;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
   }
 `;
 
-
-
 const ImgContainer = (props) => {
   const { imgData } = props;
-
-  
 
   return (
     <ImgContainerDiv>

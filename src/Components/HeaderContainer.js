@@ -25,16 +25,14 @@ const HeaderContainerDiv = styled.div`
 
   .datePicker {
   }
-    
+
   .dateWrapper {
-    
   }
-  .dateDiv{ 
+  .dateDiv {
     margin-top: 1rem;
-   display:inline;
-   align-self:center;
-   width:min-content;
-   
+    display: inline;
+    align-self: center;
+    width: min-content;
   }
 `;
 const LoadingHeaderContainerDiv = styled.div`

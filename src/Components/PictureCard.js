@@ -3,7 +3,6 @@ import styled from "styled-components";
 import ImgContainer from "./ImgContainer";
 import TitleDesc from "./TitleDesc";
 
-
 const PictureCardDiv = styled.div`
   border-radius: 25px;
   border-radius: 25px;
@@ -20,12 +19,10 @@ const PictureCardDiv = styled.div`
 const PictureCard = (props) => {
   const { imgData, updateImages } = props;
   return (
-   
     <PictureCardDiv>
       <ImgContainer imgData={imgData} />
       <TitleDesc imgData={imgData} />
     </PictureCardDiv>
-    
   );
 };
 
