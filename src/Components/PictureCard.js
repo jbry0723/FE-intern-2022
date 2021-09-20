@@ -14,10 +14,14 @@ const PictureCardDiv = styled.div`
   box-shadow: 0px 2px #eaeaeb;
   border-left: 3px solid #eaeaeb;
   border-right: 3px solid #eaeaeb;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 const PictureCard = (props) => {
-  const { imgData, updateImages } = props;
+  const { imgData } = props;
   return (
     <PictureCardDiv>
       <ImgContainer imgData={imgData} />

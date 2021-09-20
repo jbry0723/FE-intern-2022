@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import PictureCard from "./PictureCard";
 import DatePicker from "react-datepicker";
@@ -12,27 +12,42 @@ const HeaderContainerDiv = styled.div`
   flex-direction: column;
   align-items: center;
   width: 1100px;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
   h1 {
     align-self: flex-start;
+    @media (max-width: 1024px) {
+      align-self: center;
+    }
   }
   p1 {
     color: grey;
     align-self: flex-start;
+    margin-bottom: 1rem;
+    @media (max-width: 1024px) {
+      align-self: center;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
   }
   p2 {
     display: block;
   }
-
-  .datePicker {
-  }
-
-  .dateWrapper {
-  }
   .dateDiv {
     margin-top: 1rem;
     display: inline;
-    align-self: center;
     width: min-content;
+  }
+
+  .react-datepicker-wrapper dateWrapper {
+    width: 600px;
+    background-color: red;
+  }
+
+  .react-datepicker__input-container {
+    display: block;
   }
 `;
 const LoadingHeaderContainerDiv = styled.div`
@@ -42,19 +57,39 @@ const LoadingHeaderContainerDiv = styled.div`
   align-items: center;
   width: 1100px;
   height: 100vh;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
   h1 {
     align-self: flex-start;
+    @media (max-width: 1024px) {
+      align-self: center;
+    }
   }
   p1 {
     color: grey;
     align-self: flex-start;
+    margin-bottom: 1rem;
+    margin-left: 5%;
+    margin-right: 10%;
+
+    @media (max-width: 1024px) {
+      align-self: center;
+    }
   }
   p2 {
     display: block;
-    margin-top: 40px;
+    margin-top: 1rem;
+    @media (max-width: 1024px) {
+      align-self: center;
+    }
   }
   img {
-    margin-top: 40px;
+    margin-top: 1.5rem;
+
+    @media (max-width: 1024px) {
+      content: url("https://i.gifer.com/ZZ5H.gif");
+    }
   }
 `;
 
@@ -67,7 +102,7 @@ const HeaderContainer = (props) => {
         <LoadingHeaderContainerDiv>
           <h1>Spacestagram</h1>
           <p1>
-            Brought to you by NASA's Astronomy Photo of the Day (APOD) API{" "}
+            Brought to you by NASA's Astronomy Photo of the Day (APOD) API.
           </p1>
           <p2>Loading, please wait...</p2>
           <img src={require("../Icons/loading_s.gif")} alt="Loading Icon"></img>
@@ -79,7 +114,7 @@ const HeaderContainer = (props) => {
   return (
     <HeaderContainerDiv>
       <h1>Spacestagram</h1>
-      <p1>Brought to you by NASA's Astronomy Photo of the Day (APOD) API </p1>
+      <p1>Brought to you by NASA's Astronomy Photo of the Day (APOD) API. </p1>
       <div className="dateDiv">
         <label for="Datepicker">Select a date (optional):</label>
         <DatePicker

@@ -10,6 +10,9 @@ const ImgContainerDiv = styled.div`
     width: 1100px;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
   }
 `;
 
