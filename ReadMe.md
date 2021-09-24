@@ -1,7 +1,8 @@
+Deployed site: https://nasa-apod-spacestagram-jb.netlify.app
 
 Spacestagram
 
-Created by Justin Bryan useing React.
+Created by Justin Bryan using React.
 
 Includes date picker, loading spinner, and infinite scroll functionality. 
 
