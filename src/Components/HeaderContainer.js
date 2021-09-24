@@ -86,10 +86,6 @@ const LoadingHeaderContainerDiv = styled.div`
   }
   img {
     margin-top: 1.5rem;
-
-    @media (max-width: 1024px) {
-      content: url("https://i.gifer.com/ZZ5H.gif");
-    }
   }
 `;
 
@@ -100,12 +96,21 @@ const HeaderContainer = (props) => {
     return (
       <div>
         <LoadingHeaderContainerDiv>
-          <h1>Spacestagram</h1>
+          <h1>
+            Spacestagram
+          </h1>
           <p1>
             Brought to you by NASA's Astronomy Photo of the Day (APOD) API.
           </p1>
           <p2>Loading, please wait...</p2>
-          <img src={require("../Icons/loading_s.gif")} alt="Loading Icon"></img>
+          <img
+            src={
+              window.innerWidth < 1024
+                ? require("../Icons/loading_s_small.gif")
+                : require("../Icons/loading_s.gif")
+            }
+            alt="Loading Icon"
+          ></img>
         </LoadingHeaderContainerDiv>
       </div>
     );

@@ -37,13 +37,17 @@ const ImgContainer = (props) => {
       <img src={imgData.url} alt={imgData.explanation}></img>
     </ImgContainerDiv>
   );
-};
-
+}
+else if (imgData.media_type==="video")
+{
 return (
   <ImgContainerDiv>
     <iframe title={imgData.title} src={imgData.url} alt={imgData.explanation}></iframe>
   </ImgContainerDiv>
 );
+
+}
+
 };
 
 
