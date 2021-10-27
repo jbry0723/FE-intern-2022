@@ -13,3 +13,5 @@ Designed to be responsive using breakpoints at 1024px. Eliminated white-space on
 Please send any questions to: jbry0723@gmail.com
 
 Portfolio: https://jbryanportfolio.netlify.app/
+
+.
